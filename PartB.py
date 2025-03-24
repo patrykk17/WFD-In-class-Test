@@ -7,7 +7,7 @@ class TestPetAndDog(unittest.TestCase):
         # Create test objects
         self.pet = Pet("Milo", 3, "Male", "P001", "Alice")
         self.dog = Dog("Buddy", 5, "Male", "D001", "Bob", "Labrador", True)
-        self.same_dog = self.dog  # used for identity test
+        self.same_dog = self.dog
         self.different_dog = Dog("Buddy", 5, "Male", "D001", "Bob", "Labrador", True)
 
     # Test if object is instance of a class
@@ -21,7 +21,7 @@ class TestPetAndDog(unittest.TestCase):
         self.assertNotIsInstance(self.pet, Dog)
         self.assertNotIsInstance("not a pet", Pet)
 
-    # Test if 2 objects are identical (same object in memory)
+    # Test if 2 objects are identical
     def test_objects_identity(self):
         self.assertIs(self.dog, self.same_dog)
         self.assertIsNot(self.dog, self.different_dog)
